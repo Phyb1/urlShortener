@@ -1,0 +1,10 @@
+db.sqlite3
+manage.py
+
+page/__init__.py
+page/migrations/__init__.py
+urlShortener/__init__.py
+urlShortener/__pycache__/
+
+page/__pycache__/
+page/migrations/__pycache__/__init__.cpython-310.pyc
