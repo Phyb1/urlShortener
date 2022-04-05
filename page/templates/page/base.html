@@ -1,13 +1,41 @@
+{% load static %}
 <!doctype html>
-<html>
-    <head>
-        <title>{% block title %}{% endblock title %}</title>
-    </head>
-    <body>
-        <nav> 
-            <a href= "{% url 'page:index' %}">Home</a>-
-            <a href= "{% url 'page:about' %}">About</a> 
+<!--For offline development-->
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+    <!--for responsiveness-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'page/bootstrap-4.5.3/bootstrap.min.css' %}">
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+</head>
+
+<body>
+    <div>
+        <nav class='navbar navbar-info bg-light'> 
+            <a class='navbar-brand' href= "{% url 'page:index' %}">Home</a>-
+            <a class='navbar=item' href= "{% url 'page:about' %}">About</a> 
         </nav>
-        {% block content %}{% endblock content %}
-    </body>
+    </div>
+    <div class='container bg-secondary'>
+    {% block content %}{% endblock content %}
+    </div>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="{% static 'page/jquery-3.5.1/jquery-3.5.1.slim.min.js' %}">
+    </script>
+    <script src="{% static 'page/bootstrap-4.5.3/bootstrap.bundle.min.js' %}"></script>
+    <script>
+        //enabling tooltips using jquery
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
 </html>

@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <nav> 
+            <a href= "{% url 'page:index' %}">Home</a>-
+            <a href= "{% url 'page:about' %}">About</a> 
+        </nav>
+        {% block content %}{% endblock content %}
+    </body>
+</html>
