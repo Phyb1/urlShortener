@@ -22,5 +22,8 @@ def index(request):
 def about(request):
     return render(request, 'page/about.html')
 
-def result(request):
-    return render(request, 'page/result.html')
+def result(request, id):
+    link = Link.objects.get(keys=id)
+    originalLink = link.name
+    return HttpResponseRedirect(originalLink)
+    
