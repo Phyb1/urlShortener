@@ -1,5 +1,18 @@
 {% extends 'page/base.html' %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-Hopmepage
+<div class='jumbotron'>
+    <form class='bg-secondary text-info text-center' action="{% url 'page:index' %}" method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit'>
+    </form>
+    {% if url %}
+    <p class='lead text-center text-success'>Your shortened url is:&nbsp&nbsp<a href="{{url}}">{{url}}</a></p>
+    {% else %}
+    <p> Enter a url then press submit to get a shortened version</p>
+    {% endif %}
+</div>
+
+
 {% endblock content %}
