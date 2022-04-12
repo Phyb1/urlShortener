@@ -9,8 +9,13 @@ def index(request):
         form = LinkForm(request.POST)
         if form.is_valid():
             form.save()
-            link = Link.objects.get(id=6)
+            link = Link.objects.get(id=6) # getting one fixed result
             url = link.short
+            '''or
+            newLink =form.save(commit=False)
+            newLink.save()
+            url = newLink.short
+            '''
             form=LinkForm()
             context = {'url': url, 'form':form}
         return render(request, 'page/index.html', context)

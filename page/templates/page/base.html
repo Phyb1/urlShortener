@@ -18,12 +18,12 @@
 
 <body>
     <div>
-        <nav class='navbar navbar-info bg-light'> 
+        <nav class='navbar navbar-info bg-primary'> 
             <a class='navbar-brand' href= "{% url 'page:index' %}">Home</a>-
             <a class='navbar=item' href= "{% url 'page:about' %}">About</a> 
         </nav>
     </div>
-    <div class='container bg-secondary'>
+    <div class='container bg-info'>
     {% block content %}{% endblock content %}
     </div>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
